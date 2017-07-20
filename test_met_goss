@@ -8,21 +8,21 @@
 # curl -L https://raw.githubusercontent.com/aelsabbahy/goss/_VERSION_/extras/dgoss/dgoss -o /usr/local/bin/dgoss
 # chmod +rx /usr/local/bin/dgoss
 
-OS=$(awk '/DISTRIB_ID=/' /etc/*-release | sed 's/DISTRIB_ID=//' | tr '[:upper:]' '[:lower:]')
-ARCH=$(uname -m | sed 's/x86_//;s/i[3-6]86/32/')
-VERSION=$(awk '/DISTRIB_RELEASE=/' /etc/*-release | sed 's/DISTRIB_RELEASE=//' | sed 's/[.]0/./')
-
-if [ -z "$OS" ]; then
-  OS=$(awk '{print $1}' /etc/*-release | tr '[:upper:]' '[:lower:]')
-fi
-
-if [ -z "$VERSION" ]; then
-  VERSION=$(awk '{print $3}' /etc/*-release)
-fi
-
-echo $OS
-echo $ARCH
-echo $VERSION
+#OS=$(awk '/DISTRIB_ID=/' /etc/*-release | sed 's/DISTRIB_ID=//' | tr '[:upper:]' '[:lower:]')
+#ARCH=$(uname -m | sed 's/x86_//;s/i[3-6]86/32/')
+#VERSION=$(awk '/DISTRIB_RELEASE=/' /etc/*-release | sed 's/DISTRIB_RELEASE=//' | sed 's/[.]0/./')
+#
+#if [ -z "$OS" ]; then
+#  OS=$(awk '{print $1}' /etc/*-release | tr '[:upper:]' '[:lower:]')
+#fi
+#
+#if [ -z "$VERSION" ]; then
+#  VERSION=$(awk '{print $3}' /etc/*-release)
+#fi
+#
+#echo $OS
+#echo $ARCH
+#echo $VERSION
 
 GOSS_LOCATION=https://github.com/aelsabbahy/goss/releases/download/v0.3.3/goss-linux-amd64
 DGOSS_LOCATION=https://raw.githubusercontent.com/aelsabbahy/goss/master/extras/dgoss/dgoss
@@ -46,11 +46,11 @@ function install {
 
 function testje {
   echo "Start van dgoss run." 
-  $INSTALL_DIR/dgoss run -p 8080:80 nginx:1.11.10
+  $INSTALL_DIR/dgoss run -p 8081:80 nginx:1.11.10
   EXIT_CODE=$?
 }
 
-#clean
+clean
 install 
 testje 
 clean
