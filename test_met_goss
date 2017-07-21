@@ -35,16 +35,21 @@ export GOSS_PATH=./bin
 function clean {
   if [ ! -d "$INSTALL_DIR" ] ; then
     mkdir $INSTALL_DIR
+    echo "Directorie aangemaakt: $INSTALL_DIR."
   fi
   rm $INSTALL_DIR/*goss 2>/dev/null
 }
 
 function install {
+  echo "Begin install goss."
   curl -L $GOSS_LOCATION -o $INSTALL_DIR/goss
   chmod +x $INSTALL_DIR/goss
+  echo "Einde install goss."
 
+  echo "Begin install dgoss."
   curl -L $DGOSS_LOCATION -o $INSTALL_DIR/dgoss
   chmod +x $INSTALL_DIR/dgoss
+  echo "Einde install dgoss."
 }
 
 function testje {
