@@ -33,6 +33,7 @@ EXIT_CODE=0
 export GOSS_PATH=./bin
 
 function clean {
+  echo "Installatie directorie is: $INSTALL_DIR."
   if [ ! -d "$INSTALL_DIR" ] ; then
     mkdir $INSTALL_DIR
     echo "Directorie aangemaakt: $INSTALL_DIR."
