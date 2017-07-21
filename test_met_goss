@@ -49,7 +49,7 @@ function install {
 
 function testje {
   echo "Start van dgoss run." 
-  dgoss run -p 8081:80 nginx:1.11.10
+  $GOSS_PATH/dgoss run -p 8081:80 nginx:1.11.10
   EXIT_CODE=$?
 }
 
