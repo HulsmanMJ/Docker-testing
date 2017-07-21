@@ -51,10 +51,15 @@ function testje {
   echo "Start van dgoss run." 
   $GOSS_PATH/dgoss run -p 8081:80 nginx:1.11.10
   EXIT_CODE=$?
+  echo "Einde van dgoss run."
 }
 
+echo "Start 1e clean."
 clean
+echo "Start install."
 install 
+echo "Start dgoss."
 testje 
+echo "Start 2e clean."
 clean
 exit $EXIT_CODE
