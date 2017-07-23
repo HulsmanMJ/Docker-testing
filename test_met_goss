@@ -31,7 +31,7 @@ GOSS_PATH=./bin
 EXIT_CODE=0
 
 # Set your GOSS_PATH to the above location
-#export GOSS_PATH=./bin
+export GOSS_PATH=./bin
 
 function clean {
   echo "Installatie directorie is: $INSTALL_DIR."
