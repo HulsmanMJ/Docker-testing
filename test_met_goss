@@ -31,7 +31,7 @@ GOSS_PATH=bin
 EXIT_CODE=0
 
 # Set your GOSS_PATH to the above location
-export GOSS_PATH=bin
+export GOSS_PATH
 
 function clean {
   echo "Installatie directorie is: $INSTALL_DIR."
@@ -54,7 +54,7 @@ function install {
   echo "Einde install dgoss."
 }
 
-function testje {
+function start_dgoss {
   echo "Start van dgoss run." 
   $GOSS_PATH/dgoss run -p 8081:80 nginx:1.11.10
   EXIT_CODE=$?
@@ -66,7 +66,7 @@ clean
 echo "Start install."
 install 
 echo "Start dgoss."
-testje 
+start_dgoss 
 echo "Start 2e clean."
 clean
 exit $EXIT_CODE
