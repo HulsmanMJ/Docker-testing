@@ -67,6 +67,6 @@ echo "Start install."
 install 
 echo "Start dgoss."
 start_dgoss 
-echo "Start 2e clean."
-clean
+#echo "Start 2e clean."
+#clean
 exit $EXIT_CODE
