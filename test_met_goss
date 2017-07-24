@@ -56,7 +56,7 @@ function install {
 
 function testje {
   echo "Start van dgoss run." 
-  cd $GOSS_PATH
+  cd bin
   dgoss run -p 8081:80 nginx:1.11.10
   EXIT_CODE=$?
   echo "Einde van dgoss run."
