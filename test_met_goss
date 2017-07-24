@@ -26,12 +26,12 @@
 
 GOSS_LOCATION=https://github.com/aelsabbahy/goss/releases/download/v0.3.3/goss-linux-amd64
 DGOSS_LOCATION=https://raw.githubusercontent.com/aelsabbahy/goss/master/extras/dgoss/dgoss
-INSTALL_DIR=./bin
-GOSS_PATH=./bin
+INSTALL_DIR=bin
+GOSS_PATH=bin
 EXIT_CODE=0
 
 # Set your GOSS_PATH to the above location
-export GOSS_PATH=./bin
+export GOSS_PATH=bin
 
 function clean {
   echo "Installatie directorie is: $INSTALL_DIR."
