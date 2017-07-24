@@ -5,4 +5,6 @@ TAG_VERSION=$2
 LABEL=test
 FILE=Dockerfile
 
+echo "Begin van Docker build."
 docker build --tag $TAG_LABEL:$TAG_VERSION -f $FILE --label $LABEL .
+echo "Einde van Docker build."
