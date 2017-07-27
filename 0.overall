@@ -1,0 +1,15 @@
+#!/bin/bash
+
+BUILD=$1
+VERSION=$2
+
+echo "Ik ga nu beginnen met de build van: $BUILD:$VERSION."
+./1.build_met_docker $BUILD $VERSION
+EXIT_CODE=$?
+if [ $EXIT_CODE == 0 ]; then
+  echo "De build is goed gegaan."
+  echo "Ik ga nu verder met testen."
+  ./2.test_met_goss $BUILD $VERSION
+else
+  echo "De build is NIET goed gegaan."
+fi

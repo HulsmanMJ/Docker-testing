@@ -1,5 +1,5 @@
 file:
-  /usr/share/nginx/html:
+  /tmp/nginx/html:
     exists: true
     contains: []
 package:

@@ -3,10 +3,14 @@
 FROM nginx:latest
 # highly recommend you always pin versions for anything beyond dev/learn
 
-WORKDIR /usr/share/nginx/html
+RUN mkdir -p /tmp/nginx/html
+
+WORKDIR /tmp/nginx/html
 # change working directory to root of nginx webhost
 # using WORKDIR is prefered to using 'RUN cd /some/path'
 
-#COPY index.html index.html
+COPY index.html index.html
 
 # I don't have to specify EXPOSE or CMD because they're in my FROM
+
+CMD ["nginx", "-g", "daemon off;"]

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+TAG_LABEL=$1
+TAG_VERSION=$2
+LABEL=test
+FILE=Dockerfile
+EXIT_CODE=0
+
+echo "Begin van Docker build."
+docker build --tag $TAG_LABEL:$TAG_VERSION -f $FILE --label $LABEL .
+EXIT_CODE=$?
+echo "Einde van Docker build."
+exit $EXIT_CODE
