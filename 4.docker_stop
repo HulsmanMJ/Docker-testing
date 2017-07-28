@@ -5,7 +5,7 @@ TAG_VERSION=$2
 EXIT_CODE=0
 
 echo "Begin van Docker stop/remove."
-CONTAINER_ID=$(docker ps | grep "$TAG_LABEL b${TAG_VERSION}" | awk '{print $1}')
+CONTAINER_ID=$(docker ps | grep "$TAG_LABEL:${TAG_VERSION}" | awk '{print $1}')
 docker rm -f $CONTAINER_ID
 EXIT_CODE=$?
 echo "Einde van Docker stop/remove."
